@@ -1,0 +1,6 @@
+vim
+zsh
+solarized
+nerdtree
+pathogen
+tmux

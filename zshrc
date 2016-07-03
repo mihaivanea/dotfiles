@@ -13,6 +13,7 @@ LIGHTEST='#FFFFFBFBF0F0'
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="af-magic"
+DEFAULT_USER='Mihai'
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -94,5 +95,30 @@ LIGHTEST='#FFFFFBFBF0F0'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias v="vi"
+
+# optionally set DEFAULT_USER in ~/.zshrc to your regular username
+# to hide the “user@hostname” info when you’re logged in as yourself
+# on your local machine.
+
+
+alias v="vim"
+alias yo="fortune | cowsay | lolcat "
 alias c="cd"
+alias e="exit"
+alias l="ls"
+alias cl="clear"
+alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
+alias gg="open /Applications/Google\ Chrome.app"
+alias download="youtube-dl"
+alias lock="pmset sleepnow"
+google() {
+        gq=$(sed 's/ /+/g' <<<"$*")
+        open -a /Applications/Google\ Chrome.app "http://www.google.com/search?q=$gq";
+}
+alias zshh="vim ~/.zsh_history"
+alias filetree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+alias bio="iStats"
+alias tmuxrc="v ~/.tmux.conf"
+alias tkill="tmux kill-session -t "
+alias tnew="tmux new -d -s "

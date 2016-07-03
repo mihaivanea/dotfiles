@@ -1,13 +1,22 @@
 syntax enable
 set nu
 set expandtab
-set tabstop=2
+set tabstop=4
 set background=dark
 colorscheme default
 set autoindent
 set ruler
 let g:solarized_termcolors=256
 set t_Co=256
+execute pathogen#infect()
+filetype plugin indent on
+call pathogen#infect()
+map <TAB> :NERDTreeToggle<CR>
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:neocomplete#enable_at_startup = 1
+set backspace=1
+set backspace=indent,eol,start
+set shiftwidth=4
 
 
 " Colorscheme initialization "{{{
@@ -33,7 +42,6 @@ if (has("gui_running") && g:solarized_degrade == 0)
     let s:base02      = "#073642"
     let s:base01      = "#586e75"
     let s:base00      = "#657b83"
-    let s:base0       = "#839496"
     let s:base1       = "#93a1a1"
     let s:base2       = "#eee8d5"
     let s:base3       = "#fdf6e3"
@@ -82,7 +90,7 @@ elseif g:solarized_termcolors != 256 && &t_Co >= 16
     let s:magenta     = "5"
     let s:violet      = "13"
     let s:blue        = "4"
-    let s:cyan        = "6"
+"    !let s:cyan        = "6"
     let s:green       = "2"
 elseif g:solarized_termcolors == 256
     let s:vmode       = "cterm"
@@ -93,11 +101,11 @@ elseif g:solarized_termcolors == 256
     let s:base0       = "244"
     let s:base1       = "245"
     let s:base2       = "187"
-    let s:base3       = "230"
+"    !let s:base3       = "230"
     let s:yellow      = "136"
     let s:orange      = "166"
     let s:red         = "124"
-    let s:magenta     = "125"
+"    !let s:magenta     = "125"
     let s:violet      = "61"
     let s:blue        = "33"
     let s:cyan        = "37"
@@ -123,4 +131,3 @@ else
     let s:green       = "2"
 endif
 "}}}
-
